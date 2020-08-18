@@ -115,8 +115,8 @@ format() {
 prepare_build() {
   on_linux verify_linux_environment
 
-  on_osx curl -L https://github.com/crystal-lang/crystal/releases/download/0.35.1/crystal-0.35.1-1-darwin-x86_64.tar.gz -o ~/crystal.tar.gz
-  on_osx 'pushd ~;gunzip -c ~/crystal.tar.gz | tar xopf -;mv crystal-0.35.1-1 crystal;popd'
+  on_osx curl -L https://51908-6887813-gh.circle-artifacts.com/0/dist_packages/crystal-ci-update-llvm-10-dev-1-darwin-x86_64.tar.gz -o ~/crystal.tar.gz
+  on_osx 'pushd ~;gunzip -c ~/crystal.tar.gz | tar xopf -;mv crystal-ci-update-llvm-10-dev-1 crystal;popd'
   on_osx brew update --preinstall
   on_osx brew bundle --no-lock
 
@@ -150,7 +150,7 @@ with_build_env() {
 
   on_linux verify_linux_environment
 
-  export DOCKER_TEST_PREFIX="${DOCKER_TEST_PREFIX:=crystallang/crystal:0.35.1}"
+  export DOCKER_TEST_PREFIX="${DOCKER_TEST_PREFIX:=crystallang/crystal:ci-update-llvm-10-dev}"
 
   case $ARCH in
     x86_64)
