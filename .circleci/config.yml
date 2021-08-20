@@ -313,6 +313,8 @@ jobs:
             sudo chown $(whoami) /opt/crystal/
             sudo mkdir -p /var/cache
             sudo chown $(whoami) /var/cache
+
+            xcode-select --install || echo "(error)"
       - attach_workspace:
           at: /tmp/workspace
       - run:
