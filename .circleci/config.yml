@@ -315,6 +315,10 @@ jobs:
             sudo chown $(whoami) /var/cache
 
             xcode-select --install || echo "(error)"
+            which clang
+            clang --version
+            which gcc
+            gcc --version
       - attach_workspace:
           at: /tmp/workspace
       - run:
