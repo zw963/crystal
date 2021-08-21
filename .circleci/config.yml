@@ -305,7 +305,7 @@ jobs:
           command: |
             brew unlink python@2 || true
 
-            ruby-install ruby 2.7.3
+            ruby-install ruby 2.5.6
 
             brew install pkgconfig libtool
 
@@ -318,7 +318,7 @@ jobs:
       - run:
           no_output_timeout: 40m
           command: |
-            echo "2.7.3" > /tmp/workspace/distribution-scripts/.ruby-version
+            echo "2.5.6" > /tmp/workspace/distribution-scripts/.ruby-version
             cd /tmp/workspace/distribution-scripts
             source build.env
             cd omnibus
