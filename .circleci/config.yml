@@ -142,9 +142,9 @@ jobs:
     steps:
       # checkout specific distribution-scripts version to perform releases and nightly
       - run: |
-          git clone https://github.com/maxfierke/distribution-scripts.git ~/distribution-scripts
+          git clone https://github.com/crystal-lang/distribution-scripts.git ~/distribution-scripts
           cd ~/distribution-scripts
-          git checkout c13881579d919c0c7e22b2c930346ff64525a392
+          git checkout 3b6894f0b2e33f9d785b450608c54c1d7d4bc990
       # persist relevant information for build process
       - run: |
           cd ~/distribution-scripts
