@@ -133,8 +133,8 @@ format() {
 prepare_build() {
   on_linux verify_linux_environment
 
-  on_osx curl -L https://github.com/crystal-lang/crystal/releases/download/1.1.1/crystal-1.1.1-1-darwin-x86_64.tar.gz -o ~/crystal.tar.gz
-  on_osx 'pushd ~;gunzip -c ~/crystal.tar.gz | tar xopf -;mv crystal-1.1.1-1 crystal;popd'
+  on_osx curl -L https://63809-6887813-gh.circle-artifacts.com/0/dist_packages/crystal-ci-univ-dev-1-darwin-universal.tar.gz -o ~/crystal.tar.gz
+  on_osx 'pushd ~;gunzip -c ~/crystal.tar.gz | tar xopf -;mv crystal-ci-univ-dev-1 crystal;popd'
 
   # These commands may take a few minutes to run due to the large size of the repositories.
   # This restriction has been made on GitHub's request because updating shallow
