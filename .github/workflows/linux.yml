@@ -35,6 +35,9 @@ jobs:
       - name: Test
         run: FLAGS=${{ matrix.flags }} bin/ci build
 
+      - name: Test interpreter
+        run: bin/ci with_build_env 'bin/crystal spec spec/compiler/repl spec/compiler/ffi'
+
   test_alpine:
     env:
       ARCH: x86_64-musl
