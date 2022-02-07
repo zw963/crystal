@@ -9,6 +9,6 @@ def build_c_dynlib(c_filename, target_dir = SPEC_CRYSTAL_LOADER_LIB_PATH)
   {% if flag?(:msvc) %}
     `cl.exe /nologo /LD #{Process.quote(c_filename)} #{Process.quote("/Fo#{o_filename}")}`.should be_truthy
   {% else %}
-    `#{ENV["CC"]? || "cc"} -shared #{Process.quote(c_filename)} -o #{Process.quote(o_filename)}`.should be_truthy
+    `#{ENV["CC"]? || "cc"} -fPIC -shared #{Process.quote(c_filename)} -o #{Process.quote(o_filename)}`.should be_truthy
   {% end %}
 end
